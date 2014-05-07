@@ -4,6 +4,9 @@
 
 package com.kejne.tetris.gameobjects;
 
+import static org.lwjgl.opengl.GL11.*;
+import static com.kejne.tetris.gameobjects.GameBoard.*;
+
 /**
  *
  * @author kejne
@@ -18,4 +21,19 @@ public class Block {
         this.coordinate = coordinate;
         this.gameColor = color;
     }
+
+    public void draw() {
+        	    // set the color of the quad (R,G,B,A)
+	    glColor3f(0.5f,0.5f,1.0f);
+	    	
+	    // draw quad
+	    glBegin(GL_QUADS);
+	        glVertex2f(coordinate.getPixelX(),coordinate.getPixelY());
+		glVertex2f(coordinate.getPixelX()+BLOCK_SIZE,coordinate.getPixelY());
+                glVertex2f(coordinate.getPixelX()+BLOCK_SIZE,coordinate.getPixelY()+BLOCK_SIZE);
+                glVertex2f(coordinate.getPixelX(),coordinate.getPixelY()+BLOCK_SIZE);
+	    glEnd();
+    }
+    
+    
 }

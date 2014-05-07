@@ -22,8 +22,16 @@ public final class Coordinate {
         return x;
     }
     
+    public int getPixelX(){
+        return x * GameBoard.BLOCK_SIZE;
+    }
+    
     public int getY() {
         return y;
+    }
+
+    public int getPixelY(){
+        return y * GameBoard.BLOCK_SIZE;
     }
     
     public void setX(int x) {

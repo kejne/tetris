@@ -12,6 +12,8 @@ public class GameBoard {
     private static int MAX_X;
     private static int MAX_Y;
     
+    public static final int BLOCK_SIZE = 40;
+    
     public GameBoard() {
         MAX_X = 20;
         MAX_Y = 40;
