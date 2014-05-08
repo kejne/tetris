@@ -7,6 +7,8 @@ package com.kejne.tetris.gameengine;
 import com.kejne.tetris.gameobjects.Block;
 import com.kejne.tetris.gameobjects.Coordinate;
 import com.kejne.tetris.gameobjects.GameColor;
+import com.kejne.tetris.gameobjects.GameTile;
+import com.kejne.tetris.gameobjects.GameTileTypes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -23,6 +25,7 @@ import static org.lwjgl.opengl.GL11.*;
 public class Game {
     
     List<Block> blocks = new ArrayList<>();
+    GameTile activeTile = new GameTile(GameTileTypes.Z, new Coordinate(4, 4));
     
     public void start() {
         
@@ -39,14 +42,16 @@ public class Game {
 	glOrtho(0, 800, 0, 600, 1, -1);
 	glMatrixMode(GL_MODELVIEW);
         
-        blocks.add(new Block(new Coordinate(1,1), GameColor.BLUE));
+//        blocks.add(new Block(new Coordinate(1,1), GameColor.PURPLE));
         
         while(!Display.isCloseRequested()) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//            
+//            blocks.stream().forEach((block) -> {
+//                block.draw();
+//            });
+            activeTile.draw();
             
-            blocks.stream().forEach((block) -> {
-                block.draw();
-            });
             Display.update();
             Display.sync(30);
         }

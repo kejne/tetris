@@ -58,7 +58,7 @@ public final class Coordinate {
         
          int newX = getX() + coordinate.getX();
          int newY = getY() + coordinate.getY();
-         
+         System.out.println("Got x" + getX() + " " + coordinate.getX() + " " + newX);
          return new Coordinate(newX, newY);
     }
 }

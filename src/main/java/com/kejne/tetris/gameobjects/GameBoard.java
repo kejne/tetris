@@ -9,32 +9,20 @@ package com.kejne.tetris.gameobjects;
  * @author kejne
  */
 public class GameBoard {
-    private static int MAX_X;
-    private static int MAX_Y;
+    private static final int MAX_X = 20;
+    private static final int MAX_Y = 40;
     
     public static final int BLOCK_SIZE = 40;
-    
-    public GameBoard() {
-        MAX_X = 20;
-        MAX_Y = 40;
-    }
-    
-    public static int getMaxX() {
-        return MAX_X;
-    }
-    public static int getMaxY() {
-        return MAX_Y;
-    }
     
     public static boolean withinBounds(int x, int y) {
         return xWithinBounds(x) && yWithinBounds(y);
     } 
     
     public static boolean xWithinBounds(int x) {
-        return (x >= 0 && x <= getMaxX());
+        return (x >= 0 && x <= MAX_X);
     }
     
     public static boolean yWithinBounds(int y) {
-        return (y >= 0 && y <= getMaxY());
+        return (y >= 0 && y <= MAX_Y);
     }
 }

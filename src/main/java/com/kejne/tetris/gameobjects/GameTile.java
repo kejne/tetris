@@ -19,6 +19,7 @@ public class GameTile {
     public GameTile(GameTileTypes type, Coordinate initialCoordinate) {
         this.blocks = new ArrayList<>();
         List<Coordinate> blockCoordinates = type.getBlockCoordinates();
+        
         blockCoordinates.stream().forEach((blockCoordinate) -> {
             blocks.add(new Block(initialCoordinate.add(blockCoordinate), type.getGameColor()));
         });
@@ -27,5 +28,11 @@ public class GameTile {
     
     public void update() {
         blocks.get(0);
+    }
+    
+    public void draw() {
+        blocks.stream().forEach((block) -> {
+            block.draw();
+        });
     }
 }

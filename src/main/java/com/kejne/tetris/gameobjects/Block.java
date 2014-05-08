@@ -23,9 +23,9 @@ public class Block {
     }
 
     public void draw() {
-        	    // set the color of the quad (R,G,B,A)
-	    glColor3f(0.5f,0.5f,1.0f);
-	    	
+        
+	    gameColor.setGlColor();
+	   
 	    // draw quad
 	    glBegin(GL_QUADS);
 	        glVertex2f(coordinate.getPixelX(),coordinate.getPixelY());
@@ -34,6 +34,4 @@ public class Block {
                 glVertex2f(coordinate.getPixelX(),coordinate.getPixelY()+BLOCK_SIZE);
 	    glEnd();
     }
-    
-    
 }
